@@ -1,9 +1,5 @@
-using System;
-using System.IO;
-using System.Linq;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading;
 using Shadow.Models;
 using Shadow.Utils;
 
@@ -112,5 +108,7 @@ public class Client
 
         Player?.Connection.Socket.Close();
         Player = null;
+        IsRunning = false;
+        Environment.Exit(0);
     }
 }
